@@ -206,10 +206,43 @@
       width: 33.33%;
     }
 
+    /* ── Demo Embed ── */
+    .demo-wrap {
+      border: 1px solid var(--black);
+      margin-top: 28px;
+      overflow: hidden;
+    }
+
+    .demo-wrap iframe {
+      width: 100%;
+      height: 780px;
+      border: none;
+      display: block;
+    }
+
+    .demo-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--gray-500);
+      letter-spacing: 0.04em;
+      margin-top: 10px;
+    }
+
+    .demo-note a {
+      color: var(--gray-500);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .demo-note a:hover {
+      color: var(--black);
+    }
+
     /* ── Responsive ── */
     @media (max-width: 768px) {
       .site-header, .toc, .main { padding-left: 20px; padding-right: 20px; }
       .audio-table { display: block; overflow-x: auto; }
+      .demo-wrap iframe { height: 900px; }
     }
   </style>
 </head>
@@ -234,6 +267,7 @@
   <a href="#pitch-tremble">↳ 2.3 Pitch Tremble</a>
   <a href="#pitch-ambitus">↳ 2.4 Pitch Ambitus</a>
   <a href="#morph">↳ 2.5 Speaker Design</a>
+  <a href="#demo">3. Try It Live</a>
 </nav>
 
 <main class="main">
@@ -701,6 +735,32 @@
       </tr>
     </tbody>
   </table>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PART 3 — LIVE DEMO
+══════════════════════════════════════════ -->
+<div class="part-heading" id="demo">
+  <span class="part-label">Part 03</span>
+  <h2>Try It Live</h2>
+</div>
+
+<div class="section">
+  <div class="section-title">3.1 Interactive Voice Design</div>
+  <div class="section-desc">Upload any speech recording and adjust gender, age, pitch, tremble and ambitus in real time using the final model. Processing runs on Hugging Face's servers — allow a few seconds after clicking Convert.</div>
+
+  <div class="demo-wrap">
+    <iframe
+      src="https://abargum-voice-design.hf.space"
+      allow="microphone"
+      title="Voice Design — Interactive Demo">
+    </iframe>
+  </div>
+
+  <p class="demo-note">
+    Running slow? Open the full app directly on
+    <a href="https://huggingface.co/spaces/abargum/voice-design" target="_blank" rel="noopener">Hugging Face Spaces ↗</a>
+  </p>
 </div>
 
 </main>
